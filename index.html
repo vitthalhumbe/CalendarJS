@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calendar</title>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="calendar">
+        <div class="left">
+          <p id="calDate">00</p>
+          <p id="calDay">someday</p>
+        </div>
+        <div class="right">
+          <p id="calMonth">Month</p>
+          <p id="calYear">0000</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+        const weekDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+        const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+      const date = new Date();
+
+      let curDate = date.getDate();
+      let curDay= weekDays[date.getDay()];
+      let curMonth = months[date.getMonth()];
+      let curYear = date.getFullYear();
+
+      let htmlDate = document.getElementById("calDate");
+      htmlDate.innerHTML = curDate;
+      let htmlDay = document.getElementById("calDay");
+      htmlDay.innerHTML = curDay;
+      let htmlMonth = document.getElementById("calMonth");
+      htmlMonth.innerHTML = curMonth;
+      let htmlYear = document.getElementById("calYear");
+      htmlYear.innerHTML = curYear;
+
+    </script>
+  </body>
+</html>
